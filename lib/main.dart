@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'Interfaces/UI1/U1.dart';
+import 'Interfaces/UI1/profile.dart';
+import 'Talabatey/Talabatey_splash_sec.dart';
 
 void main() {
-  runApp(Interface());
+  runApp(homeB());
 }
 
 class homeB extends StatelessWidget {
@@ -13,7 +15,7 @@ class homeB extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Interface(),
+      home: splash_sec(),
     );
   }
 }
