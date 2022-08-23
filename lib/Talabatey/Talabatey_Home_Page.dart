@@ -99,7 +99,7 @@ class _Talabatey_HState extends State<Talabatey_H> {
                   Padding(
                     padding: EdgeInsets.all(6),
                     child: Container(
-                      height: 180,
+                      height: 142,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
@@ -120,18 +120,60 @@ class _Talabatey_HState extends State<Talabatey_H> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(8),
+                    padding: EdgeInsets.all(6),
                     child: Container(
-                      height: 60,
-                      width: 40,
+                      height: 142,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
-                          Choices("choices")
+                          Food(
+                            "assets/Talabatey_sources/Images/burger.jpg",
+                            "burger",
+                            "At lest:10\$"
+                          ),
+                          Food(
+                            "assets/Talabatey_sources/Images/burger.jpg",
+                            "burger",
+                            "At lest:10\$"
+                          ),
+                          Food(
+                            "assets/Talabatey_sources/Images/burger.jpg",
+                            "burger",
+                            "At lest:10\$"
+                          ),
+                          Food(
+                            "assets/Talabatey_sources/Images/burger.jpg",
+                            "burger",
+                            "At lest:10\$"
+                          ),
                         ],
                       ),
                     ),
-                  )
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(6),
+                    child: Container(
+                      height: 142,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          ResturantsCards(
+                              "assets/Talabatey_sources/R_brands/Starbucks-logo.png",
+                              "Starbucks"),
+                          ResturantsCards(
+                              "assets/Talabatey_sources/R_brands/png_kfc_64347.png",
+                              "KFC"),
+                          ResturantsCards(
+                              "assets/Talabatey_sources/R_brands/McDonald's_1968_logo.png",
+                              "McDonald's"),
+                          ResturantsCards(
+                              "assets/Talabatey_sources/R_brands/burger-king-logo.png",
+                              "BurgerKing"),
+                        ],
+                      ),
+                    ),
+                  ),
+
                 ],
               ),
             ),
@@ -234,7 +276,7 @@ class _Talabatey_HState extends State<Talabatey_H> {
     return Column(
       children: [
         Container(
-          height: 130,
+          height: 110,
           width: 200,
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -269,6 +311,69 @@ class _Talabatey_HState extends State<Talabatey_H> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [Text(choices)],
       ),
+    );
+  }
+
+  Column Food(String Images_Food,String name_Food,String Price){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Stack(
+          children: [
+            Container(
+              height: 110,
+              width: 200,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(Images_Food), fit: BoxFit.contain),
+                borderRadius: BorderRadius.circular(50),
+              ),
+              margin: EdgeInsets.symmetric(horizontal: 10),
+              child:Column(
+                children: [
+                  Padding(padding: EdgeInsets.all(18),child:  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(15)
+                        ),
+                        child:Icon(Icons.delivery_dining,color: Colors.red,),
+                      )
+                    ],),)
+                ],
+              )
+            ),
+
+          ],
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              name_Food,
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87,
+              ),
+            ),
+            SizedBox(width: 80,),
+            Text(
+              Price,
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87,
+              ),
+            ),
+          ],
+        )
+      ],
     );
   }
 }
