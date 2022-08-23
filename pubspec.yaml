@@ -65,6 +65,19 @@ flutter:
       - assets/mas.png
       - assets/plus .png
       - assets/Talabatey_sources/logo.png
+      - assets/Talabatey_sources/logo_T.png
+      - assets/Talabatey_sources/Images/flipping.jpg
+      - assets/Talabatey_sources/Images/pizzahut.jpg
+      - assets/Talabatey_sources/Images/noodles.jpg
+      - assets/Talabatey_sources/Images/hawkers.jpg
+      - assets/Talabatey_sources/Images/burger.jpg
+      - assets/Talabatey_sources/Images/bluehill.jpg
+      - assets/Talabatey_sources/Images/cheesechilly.jpg
+      - assets/Talabatey_sources/R_brands/burger-king-logo.png
+      - assets/Talabatey_sources/R_brands/McDonald's_1968_logo.png
+      - assets/Talabatey_sources/R_brands/png_kfc_64347.png
+      - assets/Talabatey_sources/R_brands/Starbucks-logo.png
+      - assets/Talabatey_sources/Images/rice_and_chicken.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

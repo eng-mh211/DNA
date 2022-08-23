@@ -11,32 +11,263 @@ class _Talabatey_HState extends State<Talabatey_H> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      appBar:AppBar(
-        elevation: 0.0,
+      appBar: AppBar(
+        elevation: 0.3,
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        title:Row(
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Icon(Icons.search,color:  Colors.black,),
+            Icon(
+              Icons.search,
+              color: Colors.black,
+            ),
             Row(
               children: [
-                Icon(Icons.keyboard_arrow_down,color:  Colors.black,),
-                Text("المنصور",style: TextStyle(color: Colors.black),),
+                Icon(
+                  Icons.keyboard_arrow_down,
+                  color: Colors.black,
+                ),
+                Text(
+                  "المنصور",
+                  style: TextStyle(color: Colors.black),
+                ),
               ],
             ),
-            Icon(Icons.notifications_active,color:  Colors.black,),
+            Icon(
+              Icons.notifications_active,
+              color: Colors.black,
+            ),
           ],
-
         ),
       ),
-      body: Column(
+      body: Container(
+        color: Colors.white,
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(6),
+                    child: Container(
+                      height: 180,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          TopFoodCard("Westurent",
+                              "assets/Talabatey_sources/Images/bluehill.jpg"),
+                          TopFoodCard("NEW!!",
+                              "assets/Talabatey_sources/Images/flipping.jpg"),
+                          TopFoodCard("Westren",
+                              "assets/Talabatey_sources/Images/noodles.jpg"),
+                          TopFoodCard("Eastren",
+                              "assets/Talabatey_sources/Images/rice_and_chicken.jpg"),
+                          TopFoodCard("FastFood..?",
+                              "assets/Talabatey_sources/Images/pizzahut.jpg"),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Column(
+                        children: [
+                          Text(
+                            "Popular Resturants",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.red),
+                          ),
+                          SizedBox(
+                            height: 10,
+                            width: 160,
+                            child: Divider(
+                              height: 10,
+                              thickness: 5,
+                              color: Color(0xffec3c44),
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(6),
+                    child: Container(
+                      height: 180,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          ResturantsCards(
+                              "assets/Talabatey_sources/R_brands/Starbucks-logo.png",
+                              "Starbucks"),
+                          ResturantsCards(
+                              "assets/Talabatey_sources/R_brands/png_kfc_64347.png",
+                              "KFC"),
+                          ResturantsCards(
+                              "assets/Talabatey_sources/R_brands/McDonald's_1968_logo.png",
+                              "McDonald's"),
+                          ResturantsCards(
+                              "assets/Talabatey_sources/R_brands/burger-king-logo.png",
+                              "BurgerKing"),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8),
+                    child: Container(
+                      height: 60,
+                      width: 40,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          Choices("choices")
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+          color: Colors.white,
+          child: Container(
+            height: 60,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(6),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.account_box_outlined,
+                        size: 30,
+                      ),
+                      Text("Account")
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(6),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.receipt_long_rounded,
+                        size: 30,
+                      ),
+                      Text("Delivery")
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(6),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.wallet,
+                        size: 30,
+                      ),
+                      Text("Wallet")
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(6),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.home_filled,
+                        size: 30,
+                      ),
+                      Text("Home")
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          )),
+    );
+  }
 
-        children: [
+  Column TopFoodCard(String tags, String Images_Food) {
+    return Column(
+      children: [
+        Container(
+          height: 140,
+          width: 140,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(Images_Food), fit: BoxFit.cover),
+            borderRadius: BorderRadius.circular(50),
+          ),
+          margin: EdgeInsets.symmetric(horizontal: 10),
+        ),
+        Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              SizedBox(
+                height: 5,
+              ),
+              Text(
+                tags,
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              )
+            ],
+          ),
+        )
+      ],
+    );
+  }
 
-        ],
+  Column ResturantsCards(String R_Images, String R_Name) {
+    return Column(
+      children: [
+        Container(
+          height: 130,
+          width: 200,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(R_Images), fit: BoxFit.contain),
+            borderRadius: BorderRadius.circular(50),
+          ),
+          margin: EdgeInsets.symmetric(horizontal: 10),
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Padding(
+          padding: EdgeInsets.only(right: 90),
+          child: Text(
+            R_Name,
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.red,
+            ),
+          ),
+        )
+      ],
+    );
+  }
 
+  Container Choices(String choices) {
+    return Container(
+      height: 20,
+      width: 20,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [Text(choices)],
       ),
     );
   }

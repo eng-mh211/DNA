@@ -29,12 +29,12 @@ class _splash_secState extends State<splash_sec> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
+      backgroundColor: Color(0xffe93946),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets/Talabatey_sources/logo.png",height: 160,width: 160,),
+            Image.asset("assets/Talabatey_sources/logo_T.png",height: 160,width: 160,),
             SizedBox(height: 20,),
             // used new dart package (flutter_spinkit)
             SpinKitCircle(
