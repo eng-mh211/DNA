@@ -45,30 +45,30 @@ class _Talabatey_HState extends State<Talabatey_H> {
         color: Colors.white,
         child: Column(
           children: [
+            Padding(
+              padding: EdgeInsets.all(6),
+              child: Container(
+                height: 180,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    TopFoodCard("Westurent",
+                        "assets/Talabatey_sources/Images/bluehill.jpg"),
+                    TopFoodCard("NEW!!",
+                        "assets/Talabatey_sources/Images/flipping.jpg"),
+                    TopFoodCard("Westren",
+                        "assets/Talabatey_sources/Images/noodles.jpg"),
+                    TopFoodCard("Eastren",
+                        "assets/Talabatey_sources/Images/rice_and_chicken.jpg"),
+                    TopFoodCard("FastFood..?",
+                        "assets/Talabatey_sources/Images/pizzahut.jpg"),
+                  ],
+                ),
+              ),
+            ),
             Expanded(
               child: ListView(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.all(6),
-                    child: Container(
-                      height: 180,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          TopFoodCard("Westurent",
-                              "assets/Talabatey_sources/Images/bluehill.jpg"),
-                          TopFoodCard("NEW!!",
-                              "assets/Talabatey_sources/Images/flipping.jpg"),
-                          TopFoodCard("Westren",
-                              "assets/Talabatey_sources/Images/noodles.jpg"),
-                          TopFoodCard("Eastren",
-                              "assets/Talabatey_sources/Images/rice_and_chicken.jpg"),
-                          TopFoodCard("FastFood..?",
-                              "assets/Talabatey_sources/Images/pizzahut.jpg"),
-                        ],
-                      ),
-                    ),
-                  ),
                   Row(
                     children: [
                       SizedBox(
@@ -120,32 +120,41 @@ class _Talabatey_HState extends State<Talabatey_H> {
                     ),
                   ),
                   Padding(
+                      padding: EdgeInsets.all(6),
+                      child: Container(
+                        height: 26,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            Container(
+                              height: 40,
+                                margin: EdgeInsets.all(0),
+                                padding: EdgeInsets.all(4),
+                                decoration: BoxDecoration(
+                                  color: Colors.grey,
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                child: Text("promo")
+                            ),
+                          ],
+                        ),
+                      )
+                  ),
+                  Padding(
                     padding: EdgeInsets.all(6),
                     child: Container(
-                      height: 142,
+                      height: 140,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
-                          Food(
-                            "assets/Talabatey_sources/Images/burger.jpg",
-                            "burger",
-                            "At lest:10\$"
-                          ),
-                          Food(
-                            "assets/Talabatey_sources/Images/burger.jpg",
-                            "burger",
-                            "At lest:10\$"
-                          ),
-                          Food(
-                            "assets/Talabatey_sources/Images/burger.jpg",
-                            "burger",
-                            "At lest:10\$"
-                          ),
-                          Food(
-                            "assets/Talabatey_sources/Images/burger.jpg",
-                            "burger",
-                            "At lest:10\$"
-                          ),
+                          Food("assets/Talabatey_sources/Images/burger.jpg",
+                              "burger", "At lest:10\$"),
+                          Food("assets/Talabatey_sources/Images/burger.jpg",
+                              "burger", "At lest:10\$"),
+                          Food("assets/Talabatey_sources/Images/burger.jpg",
+                              "burger", "At lest:10\$"),
+                          Food("assets/Talabatey_sources/Images/burger.jpg",
+                              "burger", "At lest:10\$"),
                         ],
                       ),
                     ),
@@ -176,7 +185,9 @@ class _Talabatey_HState extends State<Talabatey_H> {
 
                 ],
               ),
+
             ),
+
           ],
         ),
       ),
@@ -314,38 +325,53 @@ class _Talabatey_HState extends State<Talabatey_H> {
     );
   }
 
-  Column Food(String Images_Food,String name_Food,String Price){
+  Column Food(String Images_Food, String name_Food, String Price) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Stack(
           children: [
             Container(
-              height: 110,
-              width: 200,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(Images_Food), fit: BoxFit.contain),
-                borderRadius: BorderRadius.circular(50),
-              ),
-              margin: EdgeInsets.symmetric(horizontal: 10),
-              child:Column(
-                children: [
-                  Padding(padding: EdgeInsets.all(18),child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(15)
-                        ),
-                        child:Icon(Icons.delivery_dining,color: Colors.red,),
-                      )
-                    ],),)
-                ],
-              )
-            ),
+                height: 110,
+                width: 200,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(Images_Food), fit: BoxFit.contain),
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                margin: EdgeInsets.symmetric(horizontal: 10),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(15)),
+                            child: Icon(
+                              Icons.delivery_dining,
+                              color: Colors.red,
+                            ),
+                          ),
+                          SizedBox(width: 4,),
+                          Container(
+                            margin: EdgeInsets.all(5),
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Text("promo")
+                          ),
 
+                        ],
+                      ),
+                    )
+                  ],
+                )),
           ],
         ),
         SizedBox(
@@ -362,7 +388,9 @@ class _Talabatey_HState extends State<Talabatey_H> {
                 color: Colors.black87,
               ),
             ),
-            SizedBox(width: 80,),
+            const SizedBox(
+              width: 80,
+            ),
             Text(
               Price,
               style: TextStyle(
