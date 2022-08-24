@@ -121,23 +121,25 @@ class _Talabatey_HState extends State<Talabatey_H> {
                   ),
                   Padding(
                       padding: EdgeInsets.all(6),
-                      child: Container(
-                        height: 26,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
+                      child: Row(
                           children: [
                             Container(
-                              height: 40,
-                                margin: EdgeInsets.all(0),
-                                padding: EdgeInsets.all(4),
-                                decoration: BoxDecoration(
-                                  color: Colors.grey,
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                child: Text("promo")
-                            ),
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: [
+                                  Container(
+                                      margin: EdgeInsets.all(0),
+                                      padding: EdgeInsets.all(4),
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey,
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                      child: Text("promo")
+                                  ),
+                                ],
+                              ),
+                            )
                           ],
-                        ),
                       )
                   ),
                   Padding(
@@ -182,12 +184,9 @@ class _Talabatey_HState extends State<Talabatey_H> {
                       ),
                     ),
                   ),
-
                 ],
               ),
-
             ),
-
           ],
         ),
       ),
@@ -356,17 +355,17 @@ class _Talabatey_HState extends State<Talabatey_H> {
                               color: Colors.red,
                             ),
                           ),
-                          SizedBox(width: 4,),
+                          SizedBox(
+                            width: 4,
+                          ),
                           Container(
-                            margin: EdgeInsets.all(5),
-                            padding: EdgeInsets.all(5),
-                            decoration: BoxDecoration(
+                              margin: EdgeInsets.all(5),
+                              padding: EdgeInsets.all(5),
+                              decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: Text("promo")
-                          ),
-
+                              ),
+                              child: Text("promo")),
                         ],
                       ),
                     )
