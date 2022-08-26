@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Talabatey_Resturant_Card.dart';
+
 class Talabatey_H extends StatefulWidget {
   const Talabatey_H({Key? key}) : super(key: key);
 
@@ -45,34 +47,33 @@ class _Talabatey_HState extends State<Talabatey_H> {
         color: Colors.white,
         child: Column(
           children: [
-            Padding(
-              padding: EdgeInsets.all(6),
-              child: Container(
-                height: 180,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    TopFoodCard("Westurent",
-                        "assets/Talabatey_sources/Images/bluehill.jpg"),
-                    TopFoodCard("NEW!!",
-                        "assets/Talabatey_sources/Images/flipping.jpg"),
-                    TopFoodCard("Westren",
-                        "assets/Talabatey_sources/Images/noodles.jpg"),
-                    TopFoodCard("Eastren",
-                        "assets/Talabatey_sources/Images/rice_and_chicken.jpg"),
-                    TopFoodCard("FastFood..?",
-                        "assets/Talabatey_sources/Images/pizzahut.jpg"),
-                  ],
-                ),
+            Padding(padding: EdgeInsets.all(6)),
+            Container(
+              height: 180,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  TopFoodCard("Westurent",
+                      "assets/Talabatey_sources/Images/bluehill.jpg"),
+                  TopFoodCard(
+                      "NEW!!", "assets/Talabatey_sources/Images/flipping.jpg"),
+                  TopFoodCard(
+                      "Westren", "assets/Talabatey_sources/Images/noodles.jpg"),
+                  TopFoodCard("Eastren",
+                      "assets/Talabatey_sources/Images/rice_and_chicken.jpg"),
+                  TopFoodCard("FastFood..?",
+                      "assets/Talabatey_sources/Images/pizzahut.jpg"),
+                ],
               ),
             ),
             Expanded(
               child: ListView(
+                scrollDirection: Axis.vertical,
                 children: [
                   Row(
                     children: [
                       SizedBox(
-                        width: 10,
+                        width: 8,
                       ),
                       Column(
                         children: [
@@ -91,163 +92,72 @@ class _Talabatey_HState extends State<Talabatey_H> {
                               thickness: 5,
                               color: Color(0xffec3c44),
                             ),
+                          ),
+                          SizedBox(
+                            height: 8,
                           )
                         ],
-                      )
+                      ),
                     ],
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(6),
-                    child: Container(
-                      height: 142,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          ResturantsCards(
-                              "assets/Talabatey_sources/R_brands/Starbucks-logo.png",
-                              "Starbucks"),
-                          ResturantsCards(
-                              "assets/Talabatey_sources/R_brands/png_kfc_64347.png",
-                              "KFC"),
-                          ResturantsCards(
-                              "assets/Talabatey_sources/R_brands/McDonald's_1968_logo.png",
-                              "McDonald's"),
-                          ResturantsCards(
-                              "assets/Talabatey_sources/R_brands/burger-king-logo.png",
-                              "BurgerKing"),
-                        ],
-                      ),
+                  ), //Popluar_Resturants
+                  Container(
+                    height: 142,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        ResturantsCards(
+                            "assets/Talabatey_sources/R_brands/Starbucks-logo.png",
+                            "Starbucks"),
+                        ResturantsCards(
+                            "assets/Talabatey_sources/R_brands/png_kfc_64347.png",
+                            "KFC"),
+                        ResturantsCards(
+                            "assets/Talabatey_sources/R_brands/McDonald's_1968_logo.png",
+                            "McDonald's"),
+                        ResturantsCards(
+                            "assets/Talabatey_sources/R_brands/burger-king-logo.png",
+                            "BurgerKing"),
+                      ],
                     ),
                   ),
-                  Padding(
-                      padding: EdgeInsets.all(6),
-                      child: Row(
+                  Container(
+                    height: 500,
+                    width: 250,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Row(
                           children: [
-                            Container(
-                              child: ListView(
-                                scrollDirection: Axis.horizontal,
-                                children: [
-                                  Container(
-                                      margin: EdgeInsets.all(0),
-                                      padding: EdgeInsets.all(4),
-                                      decoration: BoxDecoration(
-                                        color: Colors.grey,
-                                        borderRadius: BorderRadius.circular(15),
-                                      ),
-                                      child: Text("promo")
-                                  ),
-                                ],
-                              ),
-                            )
+                            Go_To_resturant("assets/Talabatey_sources/Images/cheesechilly.jpg",
+                            "CheeseChilly",
+                            "4.3",
+                            "45-30",
+                            "Full-Mael...\$\$"),
+                            Go_To_resturant("assets/Talabatey_sources/Images/rice_and_chicken.jpg",
+                            "Rice and Chicken",
+                            "4.6",
+                            "40-30",
+                            "The best meal with your family"),
                           ],
-                      )
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(6),
-                    child: Container(
-                      height: 140,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          Food("assets/Talabatey_sources/Images/burger.jpg",
-                              "burger", "At lest:10\$"),
-                          Food("assets/Talabatey_sources/Images/burger.jpg",
-                              "burger", "At lest:10\$"),
-                          Food("assets/Talabatey_sources/Images/burger.jpg",
-                              "burger", "At lest:10\$"),
-                          Food("assets/Talabatey_sources/Images/burger.jpg",
-                              "burger", "At lest:10\$"),
-                        ],
-                      ),
+                        )
+                      ],
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(6),
-                    child: Container(
-                      height: 142,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          ResturantsCards(
-                              "assets/Talabatey_sources/R_brands/Starbucks-logo.png",
-                              "Starbucks"),
-                          ResturantsCards(
-                              "assets/Talabatey_sources/R_brands/png_kfc_64347.png",
-                              "KFC"),
-                          ResturantsCards(
-                              "assets/Talabatey_sources/R_brands/McDonald's_1968_logo.png",
-                              "McDonald's"),
-                          ResturantsCards(
-                              "assets/Talabatey_sources/R_brands/burger-king-logo.png",
-                              "BurgerKing"),
-                        ],
-                      ),
-                    ),
-                  ),
+                  )
                 ],
               ),
             ),
           ],
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-          color: Colors.white,
-          child: Container(
-            height: 60,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: EdgeInsets.all(6),
-                  child: Column(
-                    children: [
-                      Icon(
-                        Icons.account_box_outlined,
-                        size: 30,
-                      ),
-                      Text("Account")
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(6),
-                  child: Column(
-                    children: [
-                      Icon(
-                        Icons.receipt_long_rounded,
-                        size: 30,
-                      ),
-                      Text("Delivery")
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(6),
-                  child: Column(
-                    children: [
-                      Icon(
-                        Icons.wallet,
-                        size: 30,
-                      ),
-                      Text("Wallet")
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(6),
-                  child: Column(
-                    children: [
-                      Icon(
-                        Icons.home_filled,
-                        size: 30,
-                      ),
-                      Text("Home")
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          )),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home_filled),label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.receipt_long_rounded),label: "Delivery"),
+          BottomNavigationBarItem(icon: Icon(Icons.wallet),label: "Wallet"),
+          BottomNavigationBarItem(icon: Icon(Icons.account_box_outlined),label: "Account"),
+        ],
+      )
     );
   }
 
@@ -401,6 +311,132 @@ class _Talabatey_HState extends State<Talabatey_H> {
           ],
         )
       ],
+    );
+  }
+
+  Container Go_To_resturant(
+      String Card_Image, String Card_name, String Card_Rate, String Card_time,String Card_Data) {
+    return Container(
+      padding: EdgeInsets.all(8),
+      color: Colors.white,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Sed ut perspiciatis unde omnis",
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black.withOpacity(0.4),
+                fontSize: 16),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Container(
+                height: 150,
+                width: 240,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: Colors.cyan,
+                    image: DecorationImage(
+                        image: AssetImage(
+                          Card_Image,
+                        ),
+                        fit: BoxFit.cover)),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => Resturant_Card(
+                              C_Name: Card_name,
+                              C_Rate: Card_Rate,
+                              C_Dis: Card_Data,
+                              C_Time: Card_time, C_Image: Card_Image,
+                            )));
+                  },
+                ),
+              ),
+              Positioned(
+                top: 10,
+                right: 10,
+                child: Icon(
+                  Icons.favorite_border,
+                  color: Colors.white,
+                ),
+              ),
+              Positioned(
+                bottom: -10,
+                right: 10,
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: Colors.grey.shade200,
+                  ),
+                  child: Column(
+                    children: [
+                      Text(Card_time,style: TextStyle(fontWeight: FontWeight.bold),),
+                      Text("Min",style: TextStyle(fontSize: 12,color: Colors.black54),),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Text(
+            Card_name,
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          ),
+          SizedBox(
+            height: 4,
+          ),
+          Text(
+            Card_Data,
+            style: TextStyle(fontSize: 15),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Row(
+            children: [
+              Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(15)),
+                  child: Row(
+                    children: [
+                      Icon(Icons.star_border),
+                      Text(
+                        Card_Rate,
+                        style: TextStyle(fontSize: 12),
+                      ),
+
+                    ],
+                  )),
+              Container(
+                  margin: EdgeInsets.only(left: 5),
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: Colors.red.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(15)),
+                  child: Row(
+                    children: [
+                      Icon(Icons.add_circle_outline),
+                      Text(
+                        "Win some points..!",
+                        style: TextStyle(fontSize: 15),
+                      ),
+
+                    ],
+                  )), //Win some points..!
+            ],
+          )
+        ],
+      ),
     );
   }
 }
