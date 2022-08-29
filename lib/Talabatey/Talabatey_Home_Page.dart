@@ -13,152 +13,156 @@ class _Talabatey_HState extends State<Talabatey_H> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.3,
-        backgroundColor: Colors.white,
-        automaticallyImplyLeading: false,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Icon(
-              Icons.search,
-              color: Colors.black,
-            ),
-            Row(
-              children: [
-                Icon(
-                  Icons.keyboard_arrow_down,
-                  color: Colors.black,
-                ),
-                Text(
-                  "المنصور",
-                  style: TextStyle(color: Colors.black),
-                ),
-              ],
-            ),
-            Icon(
-              Icons.notifications_active,
-              color: Colors.black,
-            ),
-          ],
-        ),
-      ),
-      body: Container(
-        color: Colors.white,
-        child: Column(
-          children: [
-            Padding(padding: EdgeInsets.all(6)),
-            Container(
-              height: 180,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
+        appBar: AppBar(
+          elevation: 0.3,
+          backgroundColor: Colors.white,
+          automaticallyImplyLeading: false,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Icon(
+                Icons.search,
+                color: Colors.black,
+              ),
+              Row(
                 children: [
-                  TopFoodCard("Westurent",
-                      "assets/Talabatey_sources/Images/bluehill.jpg"),
-                  TopFoodCard(
-                      "NEW!!", "assets/Talabatey_sources/Images/flipping.jpg"),
-                  TopFoodCard(
-                      "Westren", "assets/Talabatey_sources/Images/noodles.jpg"),
-                  TopFoodCard("Eastren",
-                      "assets/Talabatey_sources/Images/rice_and_chicken.jpg"),
-                  TopFoodCard("FastFood..?",
-                      "assets/Talabatey_sources/Images/pizzahut.jpg"),
+                  Icon(
+                    Icons.keyboard_arrow_down,
+                    color: Colors.black,
+                  ),
+                  Text(
+                    "المنصور",
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ],
               ),
-            ),
-            Expanded(
-              child: ListView(
-                scrollDirection: Axis.vertical,
-                children: [
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Column(
-                        children: [
-                          Text(
-                            "Popular Resturants",
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.red),
-                          ),
-                          SizedBox(
-                            height: 10,
-                            width: 160,
-                            child: Divider(
-                              height: 10,
-                              thickness: 5,
-                              color: Color(0xffec3c44),
+              Icon(
+                Icons.notifications_active,
+                color: Colors.black,
+              ),
+            ],
+          ),
+        ),
+        body: Container(
+          color: Colors.white,
+          child: Column(
+            children: [
+              Padding(padding: EdgeInsets.all(6)),
+              Container(
+                height: 180,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    TopFoodCard("Westurent",
+                        "assets/Talabatey_sources/Images/bluehill.jpg"),
+                    TopFoodCard("NEW!!",
+                        "assets/Talabatey_sources/Images/flipping.jpg"),
+                    TopFoodCard("Westren",
+                        "assets/Talabatey_sources/Images/noodles.jpg"),
+                    TopFoodCard("Eastren",
+                        "assets/Talabatey_sources/Images/rice_and_chicken.jpg"),
+                    TopFoodCard("FastFood..?",
+                        "assets/Talabatey_sources/Images/pizzahut.jpg"),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: ListView(
+                  scrollDirection: Axis.vertical,
+                  children: [
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              "Popular Resturants",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.red),
                             ),
-                          ),
-                          SizedBox(
-                            height: 8,
+                            SizedBox(
+                              height: 10,
+                              width: 160,
+                              child: Divider(
+                                height: 10,
+                                thickness: 5,
+                                color: Color(0xffec3c44),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 8,
+                            )
+                          ],
+                        ),
+                      ],
+                    ), //Popluar_Resturants
+                    Container(
+                      height: 142,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          ResturantsCards(
+                              "assets/Talabatey_sources/R_brands/Starbucks-logo.png",
+                              "Starbucks"),
+                          ResturantsCards(
+                              "assets/Talabatey_sources/R_brands/png_kfc_64347.png",
+                              "KFC"),
+                          ResturantsCards(
+                              "assets/Talabatey_sources/R_brands/McDonald's_1968_logo.png",
+                              "McDonald's"),
+                          ResturantsCards(
+                              "assets/Talabatey_sources/R_brands/burger-king-logo.png",
+                              "BurgerKing"),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 500,
+                      width: 250,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          Row(
+                            children: [
+                              Go_To_resturant(
+                                  "assets/Talabatey_sources/Images/cheesechilly.jpg",
+                                  "CheeseChilly",
+                                  "4.3",
+                                  "45-30",
+                                  "Full-Mael...\$\$"),
+                              Go_To_resturant(
+                                  "assets/Talabatey_sources/Images/rice_and_chicken.jpg",
+                                  "Rice and Chicken",
+                                  "4.6",
+                                  "40-30",
+                                  "The best meal with your family"),
+                            ],
                           )
                         ],
                       ),
-                    ],
-                  ), //Popluar_Resturants
-                  Container(
-                    height: 142,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        ResturantsCards(
-                            "assets/Talabatey_sources/R_brands/Starbucks-logo.png",
-                            "Starbucks"),
-                        ResturantsCards(
-                            "assets/Talabatey_sources/R_brands/png_kfc_64347.png",
-                            "KFC"),
-                        ResturantsCards(
-                            "assets/Talabatey_sources/R_brands/McDonald's_1968_logo.png",
-                            "McDonald's"),
-                        ResturantsCards(
-                            "assets/Talabatey_sources/R_brands/burger-king-logo.png",
-                            "BurgerKing"),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: 500,
-                    width: 250,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        Row(
-                          children: [
-                            Go_To_resturant("assets/Talabatey_sources/Images/cheesechilly.jpg",
-                            "CheeseChilly",
-                            "4.3",
-                            "45-30",
-                            "Full-Mael...\$\$"),
-                            Go_To_resturant("assets/Talabatey_sources/Images/rice_and_chicken.jpg",
-                            "Rice and Chicken",
-                            "4.6",
-                            "40-30",
-                            "The best meal with your family"),
-                          ],
-                        )
-                      ],
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home_filled),label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.receipt_long_rounded),label: "Delivery"),
-          BottomNavigationBarItem(icon: Icon(Icons.wallet),label: "Wallet"),
-          BottomNavigationBarItem(icon: Icon(Icons.account_box_outlined),label: "Account"),
-        ],
-      )
-    );
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home_filled), label: "Home"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.receipt_long_rounded), label: "Delivery"),
+            BottomNavigationBarItem(icon: Icon(Icons.wallet), label: "Wallet"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.account_box_outlined), label: "Account"),
+          ],
+        ));
   }
 
   Column TopFoodCard(String tags, String Images_Food) {
@@ -314,8 +318,8 @@ class _Talabatey_HState extends State<Talabatey_H> {
     );
   }
 
-  Container Go_To_resturant(
-      String Card_Image, String Card_name, String Card_Rate, String Card_time,String Card_Data) {
+  Container Go_To_resturant(String Card_Image, String Card_name,
+      String Card_Rate, String Card_time, String Card_Data) {
     return Container(
       padding: EdgeInsets.all(8),
       color: Colors.white,
@@ -354,7 +358,8 @@ class _Talabatey_HState extends State<Talabatey_H> {
                               C_Name: Card_name,
                               C_Rate: Card_Rate,
                               C_Dis: Card_Data,
-                              C_Time: Card_time, C_Image: Card_Image,
+                              C_Time: Card_time,
+                              C_Image: Card_Image,
                             )));
                   },
                 ),
@@ -378,8 +383,14 @@ class _Talabatey_HState extends State<Talabatey_H> {
                   ),
                   child: Column(
                     children: [
-                      Text(Card_time,style: TextStyle(fontWeight: FontWeight.bold),),
-                      Text("Min",style: TextStyle(fontSize: 12,color: Colors.black54),),
+                      Text(
+                        Card_time,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Min",
+                        style: TextStyle(fontSize: 12, color: Colors.black54),
+                      ),
                     ],
                   ),
                 ),
@@ -414,7 +425,6 @@ class _Talabatey_HState extends State<Talabatey_H> {
                         Card_Rate,
                         style: TextStyle(fontSize: 12),
                       ),
-
                     ],
                   )),
               Container(
@@ -430,7 +440,6 @@ class _Talabatey_HState extends State<Talabatey_H> {
                         "Win some points..!",
                         style: TextStyle(fontSize: 15),
                       ),
-
                     ],
                   )), //Win some points..!
             ],

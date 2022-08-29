@@ -78,6 +78,12 @@ flutter:
       - assets/Talabatey_sources/R_brands/png_kfc_64347.png
       - assets/Talabatey_sources/R_brands/Starbucks-logo.png
       - assets/Talabatey_sources/Images/rice_and_chicken.jpg
+      - assets/zain_Imgaes/Image_1.jpg
+      - assets/zain_Imgaes/Image_2.jpg
+      - assets/zain_Imgaes/zain logo.png
+      - assets/zain_Imgaes/map.jpg
+      - assets/zain_Imgaes/gift.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

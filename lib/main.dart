@@ -1,7 +1,9 @@
+import 'package:dna_project/zain/zain_home_page.dart';
 import 'package:flutter/material.dart';
 
 import 'Interfaces/UI1/U1.dart';
 import 'Interfaces/UI1/profile.dart';
+import 'Talabatey/Talabatey_Payment.dart';
 import 'Talabatey/Talabatey_splash_sec.dart';
 import 'Toters/Resturant_page.dart';
 import 'Toters/Toters.dart';
@@ -17,7 +19,7 @@ class homeB extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: splash_sec(),
+      home: T_Payment(),
     );
   }
 }
