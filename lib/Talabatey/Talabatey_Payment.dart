@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Talabatey_Resturant_Card.dart';
+
 class T_Payment extends StatefulWidget {
 
 
@@ -42,7 +44,25 @@ class _T_PaymentState extends State<T_Payment> {
                                Text("CheeseChilly",style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,color: Colors.red),)
                              ],
                            ),
-                         ),)
+                         ),),
+                       Positioned(
+                         top: 35,
+                         left: 15,
+                         child: Container(
+                           padding: EdgeInsets.all(8),
+                           decoration: BoxDecoration(
+                             borderRadius: BorderRadius.circular(20),
+                             color: Colors.grey.shade200,
+                           ),
+                           child: GestureDetector(
+                             child: Icon(Icons.arrow_back),
+                             onTap: () {
+                               Navigator.of(context).pop(MaterialPageRoute(
+                                   builder: (context) => Resturant_Card(C_Rate: '', C_Time: '', C_Name: '', C_Image: '', C_Dis: '',)));
+                             },
+                           ),
+                         ),
+                       ),
 
                      ],
                    ),

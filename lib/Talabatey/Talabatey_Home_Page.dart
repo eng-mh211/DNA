@@ -151,18 +151,7 @@ class _Talabatey_HState extends State<Talabatey_H> {
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home_filled), label: "Home"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.receipt_long_rounded), label: "Delivery"),
-            BottomNavigationBarItem(icon: Icon(Icons.wallet), label: "Wallet"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.account_box_outlined), label: "Account"),
-          ],
-        ));
+        );
   }
 
   Column TopFoodCard(String tags, String Images_Food) {

@@ -249,6 +249,16 @@ class _Resturant_CardState extends State<Resturant_Card> {
             onTap: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=> T_Payment() ));
             },
+            child: Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.symmetric(horizontal: 50,vertical: 20),
+              height: 40,
+              decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(15)
+              ),
+              child:  Text("Buy Now!!",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.white),),
+            ),
           ),
         ),
       ),
